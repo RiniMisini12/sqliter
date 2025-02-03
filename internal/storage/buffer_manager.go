@@ -32,7 +32,7 @@ func (bm *LRUBufferManager) GetPage(pageNum int) (*Page, error) {
 	if elem, ok := bm.cache[pageNum]; ok {
 		bm.lruList.MoveToFront(elem)
 		entry := elem.Value.(*cacheEntry)
-		entry.pinCount++ // Pin the page.
+		entry.pinCount++
 		return entry.page, nil
 	}
 

@@ -50,7 +50,6 @@ func (ex *Executor) ExecutePlan(plan *planner.QueryPlan) (ResultIterator, error)
 		if err != nil {
 			return nil, err
 		}
-		// (Optionally, apply filtering, sorting, or grouping here.)
 		return &SimpleRowIterator{
 			rows:  rows,
 			index: 0,
